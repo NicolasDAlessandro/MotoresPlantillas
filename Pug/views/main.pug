@@ -1,0 +1,19 @@
+extends ./index.pug
+
+block main
+        div(style="width: 100%;display: flex; align-items: center;justify-content:center;")
+            if products.length !== 0
+                table(class="table table-hover" style="width:380px" )
+                    tr
+                        th="Name"
+                        th="Price"
+                        th="Image"
+                        each prod in products
+                            tr
+                                td= prod.name 
+                                td= prod.price 
+                                td
+                                    img(src=prod.url alt=prod.name width="60px")
+            else
+                h2(style="text-align: center;")="No hay productos guardados!"
+            
